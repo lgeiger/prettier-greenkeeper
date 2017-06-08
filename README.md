@@ -14,13 +14,13 @@ In order to enable Travis CI to push to our repository, it needs an access token
 
 #### Via Web Interface
 
-This access token can be added as an environment variable to Travis CI using the web interface, which means we don't have to put it into some file and encrypt it manually. Go to the Travis CI website, to your project, click options, and create a new environment variable called `PUSH_TOKEN` which will contain our newly generated token.
+This access token can be added as an environment variable to Travis CI using the web interface, which means we don't have to put it into some file and encrypt it manually. Go to the Travis CI website, to your project, click options, and create a new environment variable called `GH_TOKEN` which will contain our newly generated token.
 
 #### Via .travis.yml
 
 **Alternatively**, you can encrypt the token and put it right into the `.travis.yml`. In order to do this, install the Travis command line tool (`gem install travis`, requires Ruby and Gem being installed), and then run this command **inside the directory of your repository**:
 ```
-travis encrypt PUSH_TOKEN=PUTYOURTOKENHERE
+travis encrypt GH_TOKEN=PUTYOURTOKENHERE
 ```
 This will generate a string. Copy it and place it inside the `.travis.yml`:
 ```

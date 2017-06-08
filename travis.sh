@@ -7,7 +7,7 @@ if [[ $TRAVIS_PULL_REQUEST_BRANCH != *"greenkeeper"* ]]; then
 fi
 
 echo "Cloning repo"
-git clone "https://"$PUSH_TOKEN"@github.com/"$TRAVIS_REPO_SLUG".git" repo
+git clone "https://"$GH_TOKEN"@github.com/"$TRAVIS_REPO_SLUG".git" repo
 cd repo
 
 echo "Switching to branch $TRAVIS_PULL_REQUEST_BRANCH"
