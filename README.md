@@ -34,10 +34,10 @@ More info on encrypted keys in Travis [here](https://docs.travis-ci.com/user/enc
 Firstly, you add this part to your `.travis.yml`:
 ```yml
 after_success:
-  - sh travis.sh
+  - curl -s https://raw.githubusercontent.com/lgeiger/prettier-greenkeeper/master/travis.sh | sh
 ```
 
-It tells Travis that once the build has succeeded, it's supposed to execute a `travis.sh` file, which will do the main work. It runs prettier and then pushes those changes to the branch of the Pull Request.
+It tells Travis that once the build has succeeded, it's supposed to download and execute `travis.sh`, which will do the main work. It runs prettier and then pushes those changes to the branch of the Pull Request.
 
 If you want to customize prettier, add a `npm` script called `prettier` to your `package.json` file and `travis.sh` will run it instead:
 
